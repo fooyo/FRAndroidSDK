@@ -33,12 +33,17 @@ Fooyo photo collage sdk
  ```
  - add dependency into gradle
  ```
-     compile 'sg.fooyo:FRAndroidSdk:1.0.1'
+     compile 'sg.fooyo:FRAndroidSdk:1.0'
 ```
 
 ## Create photo collage
 
 - `startTime` ,this param represents the time that photo collage start to search.
+- `userId` used when share
+
+There are two Overriden methods to start collage.`startTime`is not necessary. if don't deliver `startTime`
+,default startTime will be set to current time.
 ```
-FooyoFRAndroidSDK.createPhotoCollage(Context context, long startTime);
+FooyoFRAndroidSDK.createPhotoCollage(Context context, String userId);
+FooyoFRAndroidSDK.createPhotoCollage(Context context, long startTime,String userId);
 ```

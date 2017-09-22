@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private int year, month, day;
     private Calendar cal;
     long startTime = 1505516827;
-
     public void onClick(View v) {
 
         final DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, 0, listener, year, month, day);//后边三个参数为显示dialog时默认的日期，月份从0开始，0-11对应1-12个月
@@ -54,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 LogUtils.e("startTime:" + startTime + "\nstartTime:" + System.currentTimeMillis());
-                FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this, startTime);
+                FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this,startTime,"a");
             }
         });
         datePickerDialog.show();

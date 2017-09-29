@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 LogUtils.e("startTime:" + startTime + "\nstartTime:" + System.currentTimeMillis());
-                FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this,startTime,"a");
+                FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this,"哈哈");
             }
         });
         datePickerDialog.show();
@@ -71,8 +71,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker arg0, int year, int month, int day) {
                 //将选择的日期显示到TextView中,因为之前获取month直接使用，所以不需要+1，这个地方需要显示，所以+1
-
-
             }
         };
     }

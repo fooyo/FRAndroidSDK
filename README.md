@@ -33,7 +33,7 @@ Fooyo photo collage sdk
  ```
  - add dependency into gradle
  ```
-     compile 'sg.fooyo:FRAndroidSdk:1.0'
+     compile 'sg.fooyo:FRAndroidSdk:1.1'
 ```
 
 ## Create photo collage
@@ -42,7 +42,7 @@ Fooyo photo collage sdk
 - `userId` used when share
 
 There are two Overriden methods to start collage.`startTime`is not necessary. if don't deliver `startTime`
-,default startTime will be set to current time.
+,default startTime will be set to past two hours.
 ```
 FooyoFRAndroidSDK.createPhotoCollage(Context context, String userId);
 FooyoFRAndroidSDK.createPhotoCollage(Context context, long startTime,String userId);

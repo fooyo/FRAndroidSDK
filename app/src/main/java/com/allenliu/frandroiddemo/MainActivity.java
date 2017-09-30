@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import sg.fooyo.frandroidsdk.sdk.FRSDKMonitorListener;
 import sg.fooyo.frandroidsdk.sdk.FooyoFRAndroidSDK;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getDate();
+        FooyoFRAndroidSDK.startMonitoring(getApplicationContext(), new FRSDKMonitorListener() {
+            @Override
+            public void onResult(boolean result) {
+                LogUtils.e(result+"");
+            }
+        });
     }
 
     DatePickerDialog.OnDateSetListener listener;

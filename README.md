@@ -33,8 +33,23 @@ Fooyo photo collage sdk
  ```
  - add dependency into gradle
  ```
-     compile 'sg.fooyo:FRAndroidSdk:1.1'
+     compile 'sg.fooyo:FRAndroidSdk:1.2'
 ```
+## Start Monitoring
+use this method  in the  MainActivity of Application.
+
+it will monitor user's location and save to the local memory if user location is in sentosa firstly.
+And this monitor will be in background and listen the change of user location until callBack return true.
+
+the callback will return true when user is no longer in sentosa area or current time is two hours later than the recordTime ,otherwise false.
+```
+ FooyoFRAndroidSDK.startMonitoring(this, new FRSDKMonitorListener() {
+            @Override
+            public void onResult(boolean result) {
+                LogUtils.e(result+"");
+            }
+        });
+ ```
 
 ## Create photo collage
 

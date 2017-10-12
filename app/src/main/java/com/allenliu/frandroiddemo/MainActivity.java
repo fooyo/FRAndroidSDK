@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 LogUtils.e("startTime:" + startTime + "\nstartTime:" + System.currentTimeMillis());
-                FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this,"哈哈");
+                FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this,startTime,"哈哈");
             }
         });
         datePickerDialog.show();

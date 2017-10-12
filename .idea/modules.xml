@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FRAndroidDemo.iml" filepath="$PROJECT_DIR$/FRAndroidDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frandroidsdk/frandroidsdk.iml" filepath="$PROJECT_DIR$/frandroidsdk/frandroidsdk.iml" />
     </modules>
   </component>
 </project>

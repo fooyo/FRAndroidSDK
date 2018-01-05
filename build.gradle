@@ -26,6 +26,9 @@ allprojects {
         maven {
             url 'https://dl.bintray.com/fooyo/FRAndroidSdk/'
         }
+        maven {
+            url 'https://dl.bintray.com/zkxy/maven/'
+        }
     }
 }
 

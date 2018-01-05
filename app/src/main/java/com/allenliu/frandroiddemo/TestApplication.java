@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.blankj.utilcode.util.LogUtils;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import sg.fooyo.frandroidsdk.sdk.FRSDKMonitorListener;
 import sg.fooyo.frandroidsdk.sdk.FooyoFRAndroidSDK;
 
@@ -15,6 +17,7 @@ public class TestApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
 
     }
 }

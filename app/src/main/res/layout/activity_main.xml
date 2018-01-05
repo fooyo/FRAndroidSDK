@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="15dp"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.allenliu.frandroiddemo.MainActivity">
 
  <Button
-     android:layout_margin="15dp"
+
      android:id="@+id/btn"
-     android:text="create photo collage"
+     android:text="photo collage by pick start time"
      android:onClick="onClick"
      android:textAllCaps="false"
      android:layout_width="match_parent"
      android:layout_height="wrap_content" />
 
-</android.support.constraint.ConstraintLayout>
+
+ <Button
+    android:layout_marginTop="15dp"
+     android:id="@+id/btn2"
+     android:text="create photo collage by default"
+     android:onClick="onClick"
+     android:textAllCaps="false"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content" />
+</LinearLayout>

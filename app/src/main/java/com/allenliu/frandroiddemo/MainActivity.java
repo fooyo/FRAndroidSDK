@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.ToastUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResult(boolean result) {
                 LogUtils.e(result+"");
+              Toast.makeText(MainActivity.this,"monitor callback result:"+result+"",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -40,31 +43,33 @@ public class MainActivity extends AppCompatActivity {
     private Calendar cal;
     long startTime = 1505516827;
     public void onClick(View v) {
-
-        final DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, 0, listener, year, month, day);//后边三个参数为显示dialog时默认的日期，月份从0开始，0-11对应1-12个月
-        datePickerDialog.setButton("ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-
-                Date date;
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                int y = datePickerDialog.getDatePicker().getYear();
-                int m = datePickerDialog.getDatePicker().getMonth();
-                int d = datePickerDialog.getDatePicker().getDayOfMonth();
-                try {
-                    Calendar calendar = Calendar.getInstance();
-                    calendar.set(y, m, d);
-                    startTime = calendar.getTime().getTime();
-                } catch (Exception e) {
-                    e.printStackTrace();
+     int id=v.getId();
+        if(id==R.id.btn) {
+            final DatePickerDialog datePickerDialog = new DatePickerDialog(MainActivity.this, 0, listener, year, month, day);//后边三个参数为显示dialog时默认的日期，月份从0开始，0-11对应1-12个月
+            datePickerDialog.setButton("ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Date date;
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    int y = datePickerDialog.getDatePicker().getYear();
+                    int m = datePickerDialog.getDatePicker().getMonth();
+                    int d = datePickerDialog.getDatePicker().getDayOfMonth();
+                    try {
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.set(y, m, d);
+                        startTime = calendar.getTime().getTime();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    LogUtils.e("startTime:" + startTime + "\nstartTime:" + System.currentTimeMillis());
+                    FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this, startTime, "testUserId");
                 }
-                LogUtils.e("startTime:" + startTime + "\nstartTime:" + System.currentTimeMillis());
-                FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this,startTime,"哈哈");
-            }
-        });
-        datePickerDialog.show();
+            });
+            datePickerDialog.show();
+        }else{
+            FooyoFRAndroidSDK.createPhotoCollage(MainActivity.this,"testUserId");
 
+        }
 
     }
 
